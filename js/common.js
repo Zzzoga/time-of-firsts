@@ -1,3 +1,4 @@
+// Smooth scroll when link clicked
 const $page = $('html, body');
 $('a[href*="#"]').click(function() {
     $page.animate({
@@ -12,6 +13,24 @@ ScrollTrigger.defaults({
   markers: false
 });
 
+// Swiper slider compontents
+new Swiper('.news__container', {
+    navigation: {
+        nextEl: '.news__arrow .arrow-next',
+        prevEl: '.news__arrow .arrow-prev'
+    },
+    slidesPerView: 3
+});
+
+new Swiper('.steps__overlay', {
+    navigation: {
+        nextEl: '.steps__slider-main .arrow-next',
+        prevEl: '.steps__slider-main .arrow-prev'
+    },
+    slidesPerView: 1
+});
+
+// GSAP Animation items
 const tlGen = gsap.timeline({});
 
 tlGen.fromTo('.post-header-bg', {x: '100vw', duration: .4 }, {x: 0, duration: .4 })
