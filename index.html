@@ -24,6 +24,7 @@
 
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="libs/animate/animate.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 	
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -263,21 +264,29 @@
 			</div>
 		</div>
 
-		<div class="steps">
+		<div class="steps__main">
 			<div class="steps__title-wrapper">
 				<div class="steps__title title">ХОД СТРОИТЕЛЬСТВА</div>
 			</div>
-			<div class="steps__overlay">
-				<div class="steps__wrapper">
-					<div class="arrow-prev"></div>
-					<div class="steps__slider">
-						<div class="steps__slider-item">
+			<div class="steps__slider-main">
+				<div class="arrow-prev"></div>
+				<div class="steps__overlay swiper-container">
+					<div class="steps__wrap swiper-wrapper">
+						<div class="steps__slider-item swiper-slide">
+							<div class="s__slider-img"><img src="img/steps-item.jpg" alt=""></div>
+							<div class="s__slider-text">Ноябрь 2022</div>
+						</div>
+						<div class="steps__slider-item swiper-slide">
+							<div class="s__slider-img"><img src="img/steps-item.jpg" alt=""></div>
+							<div class="s__slider-text">Ноябрь 2022</div>
+						</div>
+						<div class="steps__slider-item swiper-slide">
 							<div class="s__slider-img"><img src="img/steps-item.jpg" alt=""></div>
 							<div class="s__slider-text">Ноябрь 2022</div>
 						</div>
 					</div>
-					<div class="arrow-next"></div>
 				</div>
+				<div class="arrow-next"></div>
 			</div>
 		</div>
 
@@ -296,25 +305,39 @@
 					<a href="#" class="news__all-btn btn">Все новости</a>
 				</div>
 			</div>
-			<div class="news__items">
-				<a href="#" class="n__item-link">
-					<div class="new__item">
-						<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-						<div class="n__item-date">28.11.2022</div>
-					</div>
-				</a>
-				<a href="#" class="n__item-link">
-					<div class="new__item">
-						<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-						<div class="n__item-date">28.11.2022</div>
-					</div>
-				</a>
-				<a href="#" class="n__item-link">
-					<div class="new__item">
-						<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-						<div class="n__item-date">28.11.2022</div>
-					</div>
-				</a>
+			<div class="news__container swiper-container">
+				<div class="news__items swiper-wrapper">
+					<a href="#" class="n__item-link swiper-slide">
+						<div class="new__item">
+							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+							<div class="n__item-date">28.11.2022</div>
+						</div>
+					</a>
+					<a href="#" class="n__item-link swiper-slide">
+						<div class="new__item">
+							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+							<div class="n__item-date">28.11.2022</div>
+						</div>
+					</a>
+					<a href="#" class="n__item-link swiper-slide">
+						<div class="new__item">
+							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+							<div class="n__item-date">28.11.2022</div>
+						</div>
+					</a>
+					<a href="#" class="n__item-link swiper-slide">
+						<div class="new__item">
+							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+							<div class="n__item-date">28.11.2022</div>
+						</div>
+					</a>
+					<a href="#" class="n__item-link swiper-slide">
+						<div class="new__item">
+							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+							<div class="n__item-date">28.11.2022</div>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
 
@@ -381,6 +404,7 @@
 	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="libs/waypoints/waypoints.min.js"></script>
 	<script src="libs/animate/animate-css.js"></script>
 	<script src="libs/plugins-scroll/plugins-scroll.js"></script>
