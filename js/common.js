@@ -158,7 +158,7 @@ tlGen.fromTo('.post-header-bg', {x: '100vw', duration: .4 }, {x: 0, duration: .4
     end: '=+500px top', 
     markers: false,
     scrub: true,
-  }, opacity: 1, left: '243px', top: '227px', duration: 1})
+  }, opacity: 1, left: '243px', top: '195px', duration: 1})
   .fromTo('.map_logo', {opacity: 0, left: '720px', top: '565px', duration: 1}, 
   { scrollTrigger: {
     trigger: '.map',
@@ -166,13 +166,13 @@ tlGen.fromTo('.post-header-bg', {x: '100vw', duration: .4 }, {x: 0, duration: .4
     end: '=+500px top', 
     markers: false,
     scrub: true,
-  }, opacity: 1, left: '720px', top: '465px', duration: 1})
+  }, opacity: 1, left: '720px', top: '435px', duration: 1})
   .fromTo('.map__text', {opacity: 0, left: '300px', duration: 1}, 
   { scrollTrigger: {
     trigger: '.map',
     start: '2500px bottom', 
     end: '3200px bottom', 
-    markers: true,
+    markers: false,
     scrub: true,
   }, opacity: 1, left: '0', duration: 1})
   .fromTo('.map__footer-title', {opacity: 0, left: '-300px', duration: 1}, 
@@ -180,7 +180,7 @@ tlGen.fromTo('.post-header-bg', {x: '100vw', duration: .4 }, {x: 0, duration: .4
     trigger: '.map',
     start: '2500px bottom', 
     end: '3200px bottom', 
-    markers: true,
+    markers: false,
     scrub: true,
   }, opacity: 1, left: '0', duration: 1})
   .fromTo('.gallery__item:nth-child(1)', {top: '600px', left: '367px', duration: 1}, 
