@@ -14,3 +14,10 @@
 	font-style: normal;
 	font-weight: normal;
 }
+
+@font-face {
+	font-family: "Gogol";
+	src: url("../fonts/gogol.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
