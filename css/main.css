@@ -1717,6 +1717,7 @@ main {
 
 .about-slider img {
 	border-radius: 0 0 52% 0;
+	width: 1365px;
 }
 
 .about-slider__text {
@@ -1778,14 +1779,30 @@ main {
 	height: 62px;
 	border-radius: 50%;
 	border: 1px solid #000;
-	background: url(../img/arrow-black.svg) no-repeat center center;
 	cursor: pointer;
+	background-color: rgba(18, 18, 18, 0);
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	transition: all .5s ease;
 }
 
 .arrow-prev-black {
 	transform: rotate(180deg);
 	margin-right: 11px;
+	background-image: url(../img/arrow-black.svg);
 }
+
+.arrow-next-black {
+	background-image: url(../img/arrow-black.svg);
+}
+
+.arrow-prev-black:hover, 
+.arrow-next-black:hover {
+	background-color: rgba(12, 12, 12, 1);
+	background-image: url(../img/arrow-white.svg);
+}
+
 
 /* ---------------- */
 /* INSFRASCTRUCTURE */

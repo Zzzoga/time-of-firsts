@@ -9,7 +9,14 @@ const preloader = document.querySelector('.preloader')
 
 const tlPl = gsap.timeline({});
 
-
+setTimeout( () => {
+    leftPreloader.style.zIndex = '999999'
+    rightPreloader.style.zIndex = '999999'
+}, 0)
+setTimeout( () => {
+    leftPreloader.style.zIndex = '-1'
+    rightPreloader.style.zIndex = '-1'
+}, 100)
 setTimeout( () => {
 tlPl.fromTo(imgsPreloader, 
     {display: 'none', duration: 1}, 
