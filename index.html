@@ -8,7 +8,7 @@
 
 	<meta charset="utf-8">
 
-	<title>Заголовок</title>
+	<title>Главная | Время первых</title>
 	<meta name="description" content="">
 
 	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
@@ -25,18 +25,80 @@
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="libs/animate/animate.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
-
-	<script src="libs/modernizr/modernizr.js"></script>
-
 </head>
 
 <body>
 
 	<!-- Здесь пишем код -->
+
+	<div class="preloader">
+		<div class="preloader__left"></div>
+		<div class="preloader__right"></div>
+		<div class="preloader__wrapper">
+			<div class="preloader-imgs_wrapper">
+				<div class="preloader-imgs">
+					<div class="preloader-item first">
+						<img src="img/preloader_first.svg" alt="preloader" class="preloader_first">
+					</div>
+					<div class="preloader-item second">
+						<img src="img/preloader_second.svg" alt="preloader" class="preloader_second">
+					</div>
+					<div class="preloader-item thrid">
+						<img src="img/preloader_final.svg" alt="preloader" class="preloader_final">
+					</div>	
+				</div>
+			</div>
+			<div class="preloader-text">
+				<img src="img/preloader_text.svg" alt="preloader" class="preloader_text"> 
+			</div>
+		</div>
+	</div>
+
+	<div class="menu__container">
+		<div class="menu__wrapper">
+            <div class="menu-header">
+                <div class="header-left">
+                    <div class="burger-btn menu-burger">
+                        <div class="burger-icon">
+                            <span class="icon-line"></span>
+                            <span class="icon-line"></span>
+                        </div>
+                        <div class="burger-text">
+                            закрыть
+                        </div>
+                    </div>
+                    <a href="category.html" class="select-btn btn">Выбрать квартиру</a>
+                </div>
+                <a href="/" class="logo"></a>
+                <div class="header-right">
+                    <a href="#" class="phone-btn">
+                        +7 999 999 99 99
+                    </a>
+                    <button class="call-btn btn">Заказать звонок</button>
+                </div>
+            </div>
+			<div class="menu__list">
+				<a href="category.html" class="menu-link title">выбор квартир</a>
+				<a href="about.html" class="menu-link title">о проекте</a>
+				<a href="infrastructure.html" class="menu-link title">инфраструктура</a>
+				<a href="gallery.html" class="menu-link title">галерея</a>
+				<a href="contacts.html" class="menu-link title">контакты</a>
+			</div>
+            <div class="menu-footer">
+                <div class="copyright">2022 © ВЫБОР ПЕРВЫХ</div>
+                <div class="footer__menu">
+                    <a href="#steps" class="footer__menu-link">ход строительства</a>
+                    <a href="news-and-seller.html" class="footer__menu-link">новости</a>
+                    <a href="docs.html" class="footer__menu-link">документы</a>
+                </div>
+            </div>
+		</div>
+	</div>
 
 	<header class="header">
 		<div class="header-left">
@@ -50,13 +112,13 @@
 					Меню
 				</div>
 			</div>
-			<button class="select-btn btn">Выбрать квартиру</button>
+			<a href="category.html" class="select-btn btn">Выбрать квартиру</a>
 		</div>
 		<a href="/" class="logo">
 			<img src="img/Logo.svg" alt="" class="logo">
 		</a>
 		<div class="header-right">
-			<a href="#" class="phone-btn">
+			<a href="tel:+79999999999" class="phone-btn">
 				+7 999 999 99 99
 			</a>
 			<button class="call-btn btn">Заказать звонок</button>
@@ -264,7 +326,7 @@
 			</div>
 		</div>
 
-		<div class="steps__main">
+		<div class="steps__main" id="steps">
 			<div class="steps__title-wrapper">
 				<div class="steps__title title">ХОД СТРОИТЕЛЬСТВА</div>
 			</div>
@@ -302,7 +364,7 @@
 						<a href="#" class="arrow-prev"></a>
 						<a href="#" class="arrow-next"></a>
 					</div>
-					<a href="#" class="news__all-btn btn">Все новости</a>
+					<a href="news-and-seller.html" class="news__all-btn btn">Все новости</a>
 				</div>
 			</div>
 			<div class="news__container swiper-container">
@@ -404,15 +466,14 @@
 	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+	<script src="js/preloader.js"></script>
+	<script src="js/range.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-	<script src="libs/waypoints/waypoints.min.js"></script>
-	<script src="libs/animate/animate-css.js"></script>
-	<script src="libs/plugins-scroll/plugins-scroll.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
 	<script>
 	SmoothScroll({
 		animationTime    : 1000,
-		stepSize         : 60,
+		stepSize         : 50,
 
 		
 		accelerationDelta : 30,  
