@@ -687,7 +687,6 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 718px;
 	position: relative;
 	background: #121212;
 	z-index: 99;
@@ -697,6 +696,13 @@ main {
 	height: 77px;
 	overflow: hidden;
 	position: relative;
+}
+
+.partners__logo {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    justify-content: center;
 }
 
 .partners__title {
@@ -977,7 +983,7 @@ main {
 .sticky__mapimg {
 	position: absolute;
     object-fit: cover;
-	opacity: 0;
+	/* opacity: 0; */
 	transition: all .5s ease;
 }
 
@@ -1014,6 +1020,10 @@ main {
 	position: relative;
 	padding: 562px 0;
 	background: url(../img/g_bg.svg) no-repeat center 558px;
+}
+
+.gallery-svg-bg {
+	display: none;
 }
 
 .gallery__info {
@@ -1565,7 +1575,7 @@ main {
 /* ----------- */
 
 .header__info {
-	padding-top: 397px;
+	padding-top: 551px;
 	position: relative;
 }
 

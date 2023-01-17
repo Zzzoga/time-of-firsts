@@ -48,11 +48,6 @@ $('a[href*="#"]').click(function() {
     return false;
 });
 
-gsap.registerPlugin(ScrollTrigger);
-
-ScrollTrigger.defaults({
-  markers: false
-});
 
 // Swiper slider compontents
 new Swiper('.news__container', {
@@ -74,67 +69,137 @@ new Swiper('.steps__overlay', {
 // GALLERY SLIDER
 
 // Инициализация превью слайдера
-// const sliderThumbs = new Swiper('.sg__container.swiper-container', { // ищем слайдер превью по селектору
-	// задаем параметры
-// 	direction: 'vertical', // вертикальная прокрутка
-// 	slidesPerView: 3, // показывать по 3 превью
-// 	navigation: { // задаем кнопки навигации
-// 		nextEl: '.sg__next', // кнопка Next
-// 		prevEl: '.sg__prev' // кнопка Prev
-// 	},
-// });
-// // Инициализация слайдера изображений
-// const sliderImages = new Swiper('.slider__images .swiper-container', { // ищем слайдер превью по селектору
-// 	// задаем параметры
-// 	direction: 'vertical', // вертикальная прокрутка
-// 	slidesPerView: 1, // показывать по 1 изображению
-// 	spaceBetween: 32, // расстояние между слайдами
-// 	mousewheel: true, // можно прокручивать изображения колёсиком мыши
-// 	navigation: { // задаем кнопки навигации
-// 		nextEl: '.slider__next', // кнопка Next
-// 		prevEl: '.slider__prev' // кнопка Prev
-// 	},
-// 	grabCursor: true, // менять иконку курсора
-// 	thumbs: { // указываем на превью слайдер
-// 		swiper: sliderThumbs // указываем имя превью слайдера
-// 	},
-// 	breakpoints: { // условия для разных размеров окна браузера
-// 		0: { // при 0px и выше
-// 			direction: 'horizontal', // горизонтальная прокрутка
-// 		},
-// 		768: { // при 768px и выше
-// 			direction: 'vertical', // вертикальная прокрутка
-// 		}
-// 	}
-// });
 
 // GSAP Animation items
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.defaults({
+  markers: false
+});
+
 const tlGen = gsap.timeline({});
 
-// .fromTo('.header', {y: '-1000px', ease: "none", ease: "none", duration: .4 }, {y: 0, ease: "none", ease: "none", duration: .5 })
-//   .fromTo('.post-header-bg', {x: '100vw', ease: "none", ease: "none", duration: .4 }, {x: 0, ease: "none", ease: "none", duration: .4 })
-//   .fromTo('.firsts-text-header', {x: '-100vw', ease: "none", ease: "none", duration: .4 }, {x: 0, ease: "none", ease: "none", duration: .4 })
-//   .fromTo('.post-header-mini', {x: '100vw', ease: "none", ease: "none", duration: .4 }, {x: 0, ease: "none", ease: "none", duration: .4 })
-//   .fromTo('.club-text-header', {x: '-100vw', ease: "none", ease: "none", duration: .4 }, {x: 0, ease: "none", ease: "none", duration: .4 })
-//   .fromTo('.down-arrow', {x: '100vw', ease: "none", ease: "none", duration: .4 }, {x: 0, ease: "none", ease: "none", duration: .4 })
-  
+if (document.documentElement.clientWidth > 1800) { 
 
-tlGen.fromTo('.post-header-bg', {scale: '1.25', ease: "none", ease: "none", duration: 1.5}, 
+  tlGen.fromTo('.map_contur', {opacity: 0, top: '300px', ease: "none", ease: "none", duration: 1}, 
   { scrollTrigger: {
-    trigger: '.post-header',
-    start: 'top top', 
-    end: 'bottom top', 
+    trigger: '.map',
+    start: '600px bottom', 
+    end: '600px center', 
     markers: false,
     scrub: true,
-  }, scale: '1', ease: "none", ease: "none", duration: 1.5})
-  .fromTo('.slider__img', {top: '200px', ease: "none", ease: "none", duration: 1.5}, 
+  }, opacity: 1, top: 0, ease: "none", ease: "none", duration: 1})
+  .fromTo('.map_icons', {opacity: 0, left: '243px', top: '327px', ease: "none", ease: "none", duration: 1}, 
   { scrollTrigger: {
-    trigger: '.main-slider',
-    start: '-250px center', 
+    trigger: '.map',
+    start: '1500px bottom', 
+    end: '=+500px top', 
+    markers: false,
+    scrub: true,
+  }, opacity: 1, left: '243px', top: '195px', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.map_logo', {opacity: 0, left: '720px', top: '565px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.map',
+    start: '2000px bottom', 
+    end: '=+500px top', 
+    markers: false,
+    scrub: true,
+  }, opacity: 1, left: '720px', top: '435px', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.map__text', {opacity: 0, left: '300px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.map',
+    start: '2500px bottom', 
+    end: '3200px bottom', 
+    markers: false,
+    scrub: true,
+  }, opacity: 1, left: '0', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.map__footer-title', {opacity: 0, left: '-300px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.map',
+    start: '2500px bottom', 
+    end: '3200px bottom', 
+    markers: false,
+    scrub: true,
+  }, opacity: 1, left: '0', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.gallery__item:nth-child(1)', {top: '600px', left: '367px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top bottom', 
     end: 'center center', 
     markers: false,
     scrub: true,
-  }, top: 0, ease: "none", ease: "none", duration: 1.5})
+  }, top: '354px', left: '367px', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.gallery__item:nth-child(2)', {top: '104px', right: '382px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top bottom', 
+    end: 'center center', 
+    markers: false,
+    scrub: true,
+  }, top: '204px', right: '182px', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.gallery__item:nth-child(3)', {top: '853px', right: '282px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top bottom', 
+    end: 'center center', 
+    markers: false,
+    scrub: true,
+  }, top: '753px', right: '73px', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.gallery__item:nth-child(4)', {top: '661px', right: '395px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top bottom', 
+    end: 'center center', 
+    markers: false,
+    scrub: true,
+  }, top: '861px', right: '495px', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.gallery__item:nth-child(5)', {top: '239px', left: '-200px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top bottom', 
+    end: 'center center', 
+    markers: false,
+    scrub: true,
+  }, top: '139px', left: '0', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.gallery__item:nth-child(6)', {top: '1085px', left: '195px', ease: "none", ease: "none", ease: "none", duration: 1}, 
+  { scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top bottom', 
+    end: 'center center', 
+    markers: false,
+    scrub: true,
+  }, top: '925px', left: '295px', ease: "none", ease: "none", ease: "none", duration: 1})
+  .fromTo('.footer', {top: '-750px', ease: "none", ease: "none", ease: "none", duration: 3}, 
+  { scrollTrigger: {
+    trigger: '.footer',
+    start: '800px bottom', 
+    end: '1600px bottom',
+    markers: false,
+    scrub: true,
+  }, top: '0', ease: "none", ease: "none", duration: 3})
+
+}
+
+if (document.documentElement.clientWidth > 1279) {
+
+
+tlGen
+// .fromTo('.post-header-bg', {scale: '1.25', ease: "none", ease: "none", duration: 1.5}, 
+//   { scrollTrigger: {
+//     trigger: '.post-header',
+//     start: 'top top', 
+//     end: 'bottom top', 
+//     markers: false,
+//     scrub: true,
+//   }, scale: '1', ease: "none", ease: "none", duration: 1.5})
+  // .fromTo('.slider__img', {top: '200px', ease: "none", ease: "none", duration: 1.5}, 
+  // { scrollTrigger: {
+  //   trigger: '.main-slider',
+  //   start: '-250px center', 
+  //   end: 'center center', 
+  //   markers: false,
+  //   scrub: true,
+  // }, top: 0, ease: "none", ease: "none", duration: 1.5})
   .fromTo('.main__slider-img ', {top: '80px', ease: "none", ease: "none", duration: 1.5}, 
   { scrollTrigger: {
     trigger: '.main-slider',
@@ -223,94 +288,6 @@ tlGen.fromTo('.post-header-bg', {scale: '1.25', ease: "none", ease: "none", dura
     markers: false,
     scrub: true,
   }, top: '200px', ease: "none", ease: "none", duration: 1})
-  .fromTo('.map_contur', {opacity: 0, top: '300px', ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.map',
-    start: '600px bottom', 
-    end: '600px center', 
-    markers: false,
-    scrub: true,
-  }, opacity: 1, top: 0, ease: "none", ease: "none", duration: 1})
-  .fromTo('.map_icons', {opacity: 0, left: '243px', top: '327px', ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.map',
-    start: '1500px bottom', 
-    end: '=+500px top', 
-    markers: false,
-    scrub: true,
-  }, opacity: 1, left: '243px', top: '195px', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.map_logo', {opacity: 0, left: '720px', top: '565px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.map',
-    start: '2000px bottom', 
-    end: '=+500px top', 
-    markers: false,
-    scrub: true,
-  }, opacity: 1, left: '720px', top: '435px', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.map__text', {opacity: 0, left: '300px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.map',
-    start: '2500px bottom', 
-    end: '3200px bottom', 
-    markers: false,
-    scrub: true,
-  }, opacity: 1, left: '0', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.map__footer-title', {opacity: 0, left: '-300px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.map',
-    start: '2500px bottom', 
-    end: '3200px bottom', 
-    markers: false,
-    scrub: true,
-  }, opacity: 1, left: '0', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.gallery__item:nth-child(1)', {top: '600px', left: '367px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.gallery',
-    start: 'top bottom', 
-    end: 'center center', 
-    markers: false,
-    scrub: true,
-  }, top: '354px', left: '367px', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.gallery__item:nth-child(2)', {top: '104px', right: '382px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.gallery',
-    start: 'top bottom', 
-    end: 'center center', 
-    markers: false,
-    scrub: true,
-  }, top: '204px', right: '182px', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.gallery__item:nth-child(3)', {top: '853px', right: '282px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.gallery',
-    start: 'top bottom', 
-    end: 'center center', 
-    markers: false,
-    scrub: true,
-  }, top: '753px', right: '73px', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.gallery__item:nth-child(4)', {top: '661px', right: '395px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.gallery',
-    start: 'top bottom', 
-    end: 'center center', 
-    markers: false,
-    scrub: true,
-  }, top: '861px', right: '495px', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.gallery__item:nth-child(5)', {top: '239px', left: '-200px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.gallery',
-    start: 'top bottom', 
-    end: 'center center', 
-    markers: false,
-    scrub: true,
-  }, top: '139px', left: '0', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.gallery__item:nth-child(6)', {top: '1085px', left: '195px', ease: "none", ease: "none", ease: "none", duration: 1}, 
-  { scrollTrigger: {
-    trigger: '.gallery',
-    start: 'top bottom', 
-    end: 'center center', 
-    markers: false,
-    scrub: true,
-  }, top: '925px', left: '295px', ease: "none", ease: "none", ease: "none", duration: 1})
   .fromTo('.gallery__text-value', {bottom: '-160px', ease: "none", ease: "none", ease: "none", duration: 1}, 
   { scrollTrigger: {
     trigger: '.gallery',
@@ -410,8 +387,8 @@ tlGen.fromTo('.post-header-bg', {scale: '1.25', ease: "none", ease: "none", dura
   .fromTo('.footer', {top: '-750px', ease: "none", ease: "none", ease: "none", duration: 3}, 
   { scrollTrigger: {
     trigger: '.footer',
-    start: '800px bottom', 
-    end: '1600px bottom',
+    start: '500px bottom', 
+    end: '1300px bottom',
     markers: false,
     scrub: true,
   }, top: '0', ease: "none", ease: "none", duration: 3})
@@ -530,15 +507,8 @@ $(".sticky__wrapper").each(function (index) {
       ease: "none", ease: "none", duration: .5
     }
   )
-  .fromTo(
-    '.sticky__btn',
-    {
-      top: '45px',
-      ease: "none", ease: "none", duration: .5
-    },
-    {
-      top: 0,
-      ease: "none", ease: "none", duration: .5
-    }
-  );
+
 })
+
+}
+
