@@ -1,4 +1,11 @@
 /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1921px) { 
+	.adaptive__map {
+		display: none;
+	}
+}
+
+
 @media only screen and (min-width : 1280px) and (max-width : 1799px) {
 	/* DEFAULT */
 	.btn {
@@ -164,7 +171,10 @@
 	}
 	/* MAP */
 	.adaptive__map {
-		display: block;
+		display: flex;
+	}
+	.map.section .sticky__wrapper {
+		display: none;
 	}
 	.map.section {
 		margin-bottom: 30px;
@@ -306,7 +316,7 @@
 
 	/* ABOUT page */
 	.header__info {
-		padding-top: 365px;
+		padding-top: 551px;
 		position: relative;
 	}
 	.header__info-title {

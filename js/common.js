@@ -169,14 +169,14 @@ if (document.documentElement.clientWidth > 1800) {
     markers: false,
     scrub: true,
   }, top: '925px', left: '295px', ease: "none", ease: "none", ease: "none", duration: 1})
-  .fromTo('.footer', {top: '-750px', ease: "none", ease: "none", ease: "none", duration: 3}, 
-  { scrollTrigger: {
-    trigger: '.footer',
-    start: '800px bottom', 
-    end: '1600px bottom',
-    markers: false,
-    scrub: true,
-  }, top: '0', ease: "none", ease: "none", duration: 3})
+  // .fromTo('.footer', {top: '-750px', ease: "none", ease: "none", ease: "none", duration: 3}, 
+  // { scrollTrigger: {
+  //   trigger: '.footer',
+  //   start: '800px bottom', 
+  //   end: '1600px bottom',
+  //   markers: false,
+  //   scrub: true,
+  // }, top: '0', ease: "none", ease: "none", duration: 3})
 
 }
 
