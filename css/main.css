@@ -3237,14 +3237,24 @@ a.c__footer-t.contacts_map:hover:after {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background: rgba(18,18,18,1);
+	transition: all 2s ease;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	-o-transition: all 2s ease;
 }
 
-.preloader__left, .preloader__right {
+/* .preloader__left, .preloader__right {
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
 	z-index: -1;
-	transition: all 2s ease
+	transition: all 2s ease;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	-o-transition: all 2s ease;
 }
 
 .preloader__left {
@@ -3253,7 +3263,7 @@ a.c__footer-t.contacts_map:hover:after {
 
 .preloader__right {
 	background: linear-gradient(333deg, rgba(18,18,18,1) 0%, rgba(18,18,18,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 54%, rgba(255,255,255,0) 100%);
-}
+} */
 
 .preloader__wrapper {
     display: flex;
@@ -3275,7 +3285,7 @@ a.c__footer-t.contacts_map:hover:after {
 
 .preloader-imgs {
     position: relative;
-    display: flex;
+    display: none;
     justify-content: flex-start;
     width: 97px;
     height: 89px;
@@ -3291,7 +3301,7 @@ a.c__footer-t.contacts_map:hover:after {
 }
 
 .preloader-text {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     width: 282px;
 	overflow: hidden;
@@ -3300,6 +3310,11 @@ a.c__footer-t.contacts_map:hover:after {
 .preloader-item img {
 	width: 117px;
 	height: 89px;
+}
+
+.preloader-item.third img {
+	position: relative;
+	top: 1px;
 }
 
 .preloader-item:first-child {

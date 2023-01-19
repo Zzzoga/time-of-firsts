@@ -1,3 +1,90 @@
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value, options = {}) {
+
+  options = {
+    path: '/',
+    // при необходимости добавьте другие значения по умолчанию
+    ...options
+  };
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+
+function deleteCookie(name) {
+  setCookie(name, "", {
+    'max-age': -1
+  })
+}
+
+if (getCookie('loading') !== 'done') {
+  const firstPreloader = document.querySelector('.preloader-item.first')
+  const secondPreloader = document.querySelector('.preloader-item.second')
+  const textPreloader = document.querySelector('.preloader-text')
+  const imgsPreloader = document.querySelector('.preloader-imgs')
+  const wrapperPreloader = document.querySelector('.preloader__wrapper')
+  const leftPreloader = document.querySelector('.preloader__left')
+  const rightPreloader = document.querySelector('.preloader__right')
+  const preloader = document.querySelector('.preloader')
+
+  preloader.style.display = 'flex'
+
+  const tlPl = gsap.timeline({});
+
+  setTimeout( () => {
+    preloader.style.display = 'flex'
+  }, 0)
+  setTimeout( () => {
+      document.querySelector('body').style.overflowY = 'hidden'
+  }, 0)
+  setTimeout( () => {
+  tlPl.fromTo(imgsPreloader, 
+      {display: 'none', duration: 1}, 
+      {display: 'flex', duration: 1})
+      .fromTo(imgsPreloader, 
+      {width: '0', duration: 1}, 
+      {width: '117px', duration: 1}).
+      fromTo(firstPreloader, 
+      {width: '117px', duration: 1}, 
+      {width: 0, duration: 1})
+      .fromTo(secondPreloader, 
+      {width: '117px', duration: 1}, 
+      {width: 0, duration: 1})
+      .fromTo(textPreloader, 
+      {display: 'none', width: '0', duration: 1}, 
+      {display: 'flex', width: '282px', duration: 1})
+  }, 0)
+  setTimeout( () => {
+      preloader.style.transform = 'translateY(-100%)'
+  }, 6000)
+  setTimeout( () => {
+      preloader.style.display = 'none'
+      document.querySelector('body').style.overflowY = 'auto'
+  }, 9000)
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
 // SHOW/HIDE MENU FUNCTION  
 document.querySelector('.header .burger-btn').addEventListener('click', () => {
   document.querySelector('.menu__container').style.display = 'flex'
@@ -731,4 +818,9 @@ $(".sticky__wrapper").each(function (index) {
 })
 
 }
+
+setCookie('loading', 'done')
+
+});
+
 
