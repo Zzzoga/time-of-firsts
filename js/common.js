@@ -85,6 +85,10 @@ if (getCookie('loading') !== 'done') {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+// PHONE MASK
+
+maskPhone('input#phone')
+
 // SHOW/HIDE MENU FUNCTION  
 document.querySelector('.header .burger-btn').addEventListener('click', () => {
   document.querySelector('.menu__container').style.display = 'flex'
@@ -285,7 +289,7 @@ $('.partners__list').slick({
   slidesToScroll: 1,
   arrows: false,
   autoplay: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 1000,
 });
 
 $('.img__list').slick({
@@ -310,7 +314,6 @@ $('.news__items').slick({
   nextArrow: '.news .arrow-next'
 });
 
-
 $('.about-slider__img').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -332,23 +335,38 @@ $('.big-gallery').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
-  // vertical: true,
   fade: true,
   asNavFor: '.sg__container',
 });
 $('.sg__container').slick({
-  slidesToShow: 3,
+  slidesToShow: 1,
   slidesToScroll: 1,
-  vertical: true,
+  dots: true,
+  fade: true,
   asNavFor: '.big-gallery',
   prevArrow: '.sg__prev',
   nextArrow: '.sg__next'
 });
 
-// GALLERY SLIDER
+// GALLERY COUNT
+if (document.querySelector('.small-gallery') !== null) {
 
-// Инициализация превью слайдера
+const listLength = document.querySelectorAll('ul.slick-dots li').length
+const currentCount = document.querySelector('.count__num')
+const allCount = document.querySelector('.count__all')
 
+document.querySelector('.small-gallery .slick-dots').style.display = 'none'
+
+allCount.innerHTML = `${listLength}`
+
+document.querySelector('.sg__prev').addEventListener('click', e => {
+    document.querySelector('.count__num').innerHTML = document.querySelector('ul.slick-dots li.slick-active').textContent
+  })
+
+  document.querySelector('.sg__next').addEventListener('click', e => {
+    document.querySelector('.count__num').innerHTML = document.querySelector('ul.slick-dots li.slick-active').textContent
+  })
+}
 // GSAP Animation items
 gsap.registerPlugin(ScrollTrigger);
 
@@ -476,18 +494,18 @@ tlGen.fromTo('.map_contur', {opacity: 0, top: '300px', ease: "none", ease: "none
 //     markers: false,
 //     scrub: true,
 //   }, top: '925px', left: '295px', ease: "none", ease: "none", ease: "none", duration: 1})
-//   // .fromTo('.footer', {top: '-750px', ease: "none", ease: "none", ease: "none", duration: 3}, 
-//   // { scrollTrigger: {
-//   //   trigger: '.footer',
-//   //   start: '800px bottom', 
-//   //   end: '1600px bottom',
-//   //   markers: false,
-//   //   scrub: true,
-//   // }, top: '0', ease: "none", ease: "none", duration: 3})
+//   .fromTo('.footer', {top: '-750px', ease: "none", ease: "none", ease: "none", duration: 3}, 
+//   { scrollTrigger: {
+//     trigger: '.footer',
+//     start: '800px bottom', 
+//     end: '1600px bottom',
+//     markers: false,
+//     scrub: true,
+//   }, top: '0', ease: "none", ease: "none", duration: 3})
 
 // }
 
-if (document.documentElement.clientWidth > 1279) {
+// if (document.documentElement.clientWidth > 1279) {
 
 
 // tlGen
@@ -817,7 +835,6 @@ $(".sticky__wrapper").each(function (index) {
 
 })
 
-}
 
 setCookie('loading', 'done')
 

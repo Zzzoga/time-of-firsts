@@ -735,7 +735,7 @@ main {
 }
 
 .partners__list {
-	display: flex;
+	display: block;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
@@ -1045,6 +1045,30 @@ main {
 	position: relative;
 	padding: 562px 0;
 	background: url(../img/g_bg.svg) no-repeat center 558px;
+}
+
+.gallery__count {
+    display: flex;
+    position: absolute;
+    top: 65vh;
+    justify-content: space-between;
+    width: 42px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 125%;
+}
+
+.gallery__count:after {
+    content: '';
+    height: 1px;
+    width: 12px;
+    color: #fff;
+    background: #fff;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
 }
 
 .gallery-svg-bg {
@@ -2974,18 +2998,24 @@ a.c__footer-t.contacts_map:hover:after {
   .gallery-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
 }
 
 .sg__container {
-    display: flex;
+    display: block;
     width: 380px;
     justify-content: center;
     align-items: center;
     max-width: 380px;
-    height: 100vh;
+    height: auto;
+}
+
+img.galler__bg {
+    position: absolute;
+    z-index: -1;
+    margin-right: 60px;
 }
 
 .sg__container img {
@@ -2999,6 +3029,7 @@ a.c__footer-t.contacts_map:hover:after {
     align-items: center;
     overflow: hidden;
     height: 100vh;
+	width: 50%;
 }
 
 .sg__container.swiper-container .swiper-slide {
@@ -3006,12 +3037,16 @@ a.c__footer-t.contacts_map:hover:after {
 }
 
 .big-gallery {
-	display: flex;
-	width: 815px;
-	height: 570px;
+	display: block;
+	width: 50%;
+	height: 100vh;
 	justify-content: center;
 	align-items: center;
-	margin-left: 200px;
+}
+
+.big-gallery img {
+	width: 960px;
+	height: 100vh;
 }
 
 /* .swiper-slide {
@@ -3025,8 +3060,15 @@ a.c__footer-t.contacts_map:hover:after {
 	border: 1px solid #C4A27A;
 	background: url(../img/arrow_new.svg) no-repeat center center;
 	cursor: pointer;
-	margin: 0 11px;
 	transition: all .5s ease;
+}
+
+.sg__prev {
+	margin-right: 92px;
+}
+
+.sg__next {
+	margin-left: 92px;
 }
 
 .sg__prev:focus, .sg__next:focus {
