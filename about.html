@@ -8,7 +8,7 @@
 
 	<meta charset="utf-8">
 
-	<title>О компании | Время первых</title>
+	<title>Главная | Время первых</title>
 	<meta name="description" content="">
 
 	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
@@ -24,18 +24,65 @@
 
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="libs/animate/animate.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 	
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
-
-	<script src="libs/modernizr/modernizr.js"></script>
-
 </head>
 
 <body>
 
 	<!-- Здесь пишем код -->
+
+	<div class="preloader">
+		<div class="preloader__left"></div>
+		<div class="preloader__right"></div>
+		<div class="preloader__wrapper">
+			<div class="preloader-imgs_wrapper">
+				<div class="preloader-imgs">
+					<div class="preloader-item first">
+						<img src="img/preloader_first.svg" alt="preloader" class="preloader_first">
+					</div>
+					<div class="preloader-item second">
+						<img src="img/preloader_second.svg" alt="preloader" class="preloader_second">
+					</div>
+					<div class="preloader-item thrid">
+						<img src="img/preloader_final.svg" alt="preloader" class="preloader_final">
+					</div>	
+				</div>
+			</div>
+			<div class="preloader-text">
+				<img src="img/preloader_text.svg" alt="preloader" class="preloader_text"> 
+			</div>
+		</div>
+	</div>
+
+	<div class="call__overlay">
+		<div class="call__mask"></div>
+		<div class="call__popup">
+			<div class="call__close">
+				<img src="img/call__close.svg" alt="">
+			</div>
+			<div class="call__img">
+				<img src="img/call__img.jpg" alt="">
+			</div>
+			<div class="call__popup__form">
+				<form action="#" class="call__form">
+					<input type="text" name="name" id="name" placeholder="Имя" class="call__input">
+					<input type="tel" name="phone" id="phone" placeholder="Телефон" class="call__input">
+					<div class="politics">
+						<input type="checkbox" id="politic" name="politic" value="yes" class="custom-checkbox">
+						<label for="politic">Я согласен на обработку персональных данных
+						</label>
+					</div>
+					<input type="submit" value="отправить" class="submit__btn btn">
+				</form>
+			</div>
+		</div>
+	</div>
 
 	<div class="menu__container">
 		<div class="menu__wrapper">
@@ -54,10 +101,13 @@
                 </div>
                 <a href="/" class="logo"></a>
                 <div class="header-right">
-                    <a href="#tel:+79999999999" class="phone-btn">
+                    <a href="#" class="phone-btn">
                         +7 347 268 08 28
                     </a>
                     <button class="call-btn btn">Заказать звонок</button>
+					<a href="tel:+73472680828" class="mobile__phone__menu">
+						<img src="img/mobile__phone.svg" alt="">
+					</a>
                 </div>
             </div>
 			<div class="menu__list">
@@ -66,14 +116,12 @@
 				<a href="infrastructure.html" class="menu-link title">инфраструктура</a>
 				<a href="gallery.html" class="menu-link title">галерея</a>
 				<a href="contacts.html" class="menu-link title">контакты</a>
+				<a href="#steps" class="menu-link title">ход строительства</a>
+                <a href="news-and-seller.html" class="menu-link title">новости</a>
+                <a href="docs.html" class="menu-link title">документы</a>
 			</div>
             <div class="menu-footer">
                 <div class="copyright">2022 © ВЫБОР ПЕРВЫХ</div>
-                <div class="footer__menu">
-                    <a href="#steps" class="footer__menu-link">ход строительства</a>
-                    <a href="news-and-seller.html" class="footer__menu-link">новости</a>
-                    <a href="docs.html" class="footer__menu-link">документы</a>
-                </div>
             </div>
 		</div>
 	</div>
@@ -94,14 +142,17 @@
 		</div>
 		<a href="/" class="logo"></a>
 		<div class="header-right">
-			<a href="#" class="phone-btn">
+			<a href="tel:+79999999999" class="phone-btn">
 				+7 347 268 08 28
 			</a>
 			<button class="call-btn btn">Заказать звонок</button>
+			<a href="tel:+73472680828" class="mobile__phone">
+				<img src="img/mobile__phone.svg" alt="">
+			</a>
 		</div>
 	</header>
 
-	<div class="main">
+	<main class="main">
 
 		<div class="header__info">
 			<div class="header__info-title title">О проекте</div>
@@ -139,23 +190,59 @@
 		</div>
 
 		<div class="floor-plan">
-			<img src="img/floor-plan-img.jpg" alt="">
+			<div class="floor__imgs">
+				<img src="img/floor-plan-3.jpg" alt="" class="first floor__img">
+				<img src="img/floor-plan-2.jpg" alt="" class="second floor__img">
+				<img src="img/floor-plan-1.jpg" alt="" class="third floor__img">
+			</div>
 			<div class="floor-plan__text">
-				<div class="fp__text-item title">качественные <br>материалы</div>
-				<div class="fp__text-item title active">современные <br>планировки</div>
-				<div class="fp__text-item title">закрытая <br>территория</div>
+				<div class="fp__text-item title first">качественные <br>материалы</div>
+				<div class="fp__text-item title second">современные <br>планировки</div>
+				<div class="fp__text-item title third">закрытая <br>территория</div>
 			</div>
 		</div>
 
 		<div class="about-slider">
 			<div class="about-slider__img">
 				<img src="img/about-slider-img.jpg" alt="">
+				<img src="img/about-slider-img (1).png" alt="">
+				<img src="img/about-slider-img (2).png" alt="">
+				<img src="img/about-slider-img (3).png" alt="">
+				<img src="img/about-slider-img (4).png" alt="">
 			</div>
 			<div class="about-slider__text">
 				<div class="a-s__text-block">
-					<div class="a-s__text-title title">Безопасность</div>
-					<div class="a-s__text-text">
-						Закрытый отапливаемый паркинг с удобной системой проезда и расположения мест, которые будут удобны для автомобиля любых габаритов.
+					<div class="a-s__text-item">
+						<div class="a-s__text-title title">Безопасность</div>
+						<div class="a-s__text-text">
+							Закрытый отапливаемый паркинг с удобной системой проезда и расположения мест, которые будут удобны для автомобиля любых габаритов.
+						</div>
+					</div>
+					<div class="a-s__text-item">
+						<div class="a-s__text-title title">Лифты</div>
+						<div class="a-s__text-text">
+							Оформление, продуманное до мельчайших деталей, в сочетании с качественным исполнением. Схема размещения и внутреннее устройство лифтов разработаны с применением высоких технологий.
+						</div>
+					</div>
+					<div class="a-s__text-item">
+						<div class="a-s__text-title title">Умный дом и электричество
+						</div>
+						<div class="a-s__text-text">
+							Технология комфортной жизни, объединяющая системы безопасности и жизнеобеспечения. Современное решение для настоящего премиум-комфорта. Дом, который способен думать за Вас.
+						</div>
+					</div>
+					<div class="a-s__text-item">
+						<div class="a-s__text-title title">Технологии строительства
+						</div>
+						<div class="a-s__text-text">
+							Современные технологии строительства с применением последних разработок. Материалы премиального качества, современные фактуры и лучшие достижения инженерии. Изысканные сочетания, создающие неповторимый стиль.
+						</div>
+					</div>
+					<div class="a-s__text-item">
+						<div class="a-s__text-title title">Освещение</div>
+						<div class="a-s__text-text">
+							Удобная и продуманная до мельчайших деталей система освещения. Грамотное расположение источников освещения обеспечивает комфорт в любое время суток.
+						</div>
 					</div>
 				</div>
 				<div class="a-s__text-btn">
@@ -163,7 +250,6 @@
 						<div class="arrow-prev-black"></div>
 						<div class="arrow-next-black"></div>
 					</div>
-					<div class="a-s__count">1/05</div>
 				</div>
 			</div>
 		</div>
@@ -207,6 +293,33 @@
 					<div class="partner__info">
 						<div class="info__item">2023</div>
 						<div class="info__item">Уралсиб</div>
+					</div>
+				</div>
+				<div class="partners__item">
+					<div class="partners__logo">
+						<img src="img/psb.svg" alt="">
+					</div>
+					<div class="partner__info">
+						<div class="info__item">2023</div>
+						<div class="info__item">ПСБ</div>
+					</div>
+				</div>
+				<div class="partners__item">
+					<div class="partners__logo">
+						<img src="img/otk.svg" alt="">
+					</div>
+					<div class="partner__info">
+						<div class="info__item">2023</div>
+						<div class="info__item">Открытие</div>
+					</div>
+				</div>
+				<div class="partners__item">
+					<div class="partners__logo">
+						<img src="img/metal.svg" alt="">
+					</div>
+					<div class="partner__info">
+						<div class="info__item">2023</div>
+						<div class="info__item">Металлинвестбанк</div>
 					</div>
 				</div>
 			</div>
@@ -259,7 +372,8 @@
 			</div>
 		</div>
 		<div class="footer__logo">
-			<img src="img/footer__logo.png" alt="">
+			<img src="img/footer__logo.png" alt="" class="footer__img">
+			<img src="img/mobile__footer.svg" alt="" class="mobile__footer__img">
 		</div>
 	</footer>
 	
@@ -272,6 +386,7 @@
 	<![endif]-->
 
 	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

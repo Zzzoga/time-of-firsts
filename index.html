@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="libs/animate/animate.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 	
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -59,6 +60,30 @@
 		</div>
 	</div>
 
+	<div class="call__overlay">
+		<div class="call__mask"></div>
+		<div class="call__popup">
+			<div class="call__close">
+				<img src="img/call__close.svg" alt="">
+			</div>
+			<div class="call__img">
+				<img src="img/call__img.jpg" alt="">
+			</div>
+			<div class="call__popup__form">
+				<form action="#" class="call__form">
+					<input type="text" name="name" id="name" placeholder="Имя" class="call__input">
+					<input type="tel" name="phone" id="phone" placeholder="Телефон" class="call__input">
+					<div class="politics">
+						<input type="checkbox" id="politic" name="politic" value="yes" class="custom-checkbox">
+						<label for="politic">Я согласен на обработку персональных данных
+						</label>
+					</div>
+					<input type="submit" value="отправить" class="submit__btn btn">
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<div class="menu__container">
 		<div class="menu__wrapper">
             <div class="menu-header">
@@ -80,6 +105,9 @@
                         +7 347 268 08 28
                     </a>
                     <button class="call-btn btn">Заказать звонок</button>
+					<a href="tel:+73472680828" class="mobile__phone__menu">
+						<img src="img/mobile__phone.svg" alt="">
+					</a>
                 </div>
             </div>
 			<div class="menu__list">
@@ -88,17 +116,42 @@
 				<a href="infrastructure.html" class="menu-link title">инфраструктура</a>
 				<a href="gallery.html" class="menu-link title">галерея</a>
 				<a href="contacts.html" class="menu-link title">контакты</a>
+				<a href="#steps" class="menu-link title">ход строительства</a>
+                <a href="news-and-seller.html" class="menu-link title">новости</a>
+                <a href="docs.html" class="menu-link title">документы</a>
 			</div>
             <div class="menu-footer">
                 <div class="copyright">2022 © ВЫБОР ПЕРВЫХ</div>
-                <div class="footer__menu">
+                <!-- <div class="footer__menu">
                     <a href="#steps" class="footer__menu-link">ход строительства</a>
                     <a href="news-and-seller.html" class="footer__menu-link">новости</a>
                     <a href="docs.html" class="footer__menu-link">документы</a>
-                </div>
+                </div> -->
             </div>
 		</div>
 	</div>
+
+	<div class="news__popup-container">
+        <div class="news__popup-overlay"></div>
+        <div class="news__popup">
+            <div class="news__popup-close">
+                <img src="img/close-popup.svg" alt="close popup">
+            </div>
+            <img src="img/news__popup.jpg" alt="" class="news__popup-img">
+            <div class="news__popup-text">
+                <div class="np-text-date">29.11.2022</div>
+                <div class="np-text-title">Заголовок статьи или акции</div>
+                <div class="np-text-content">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+
+					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                </div>
+            </div>
+            <div class="news__popup-share">
+                <a href="#" class="news__popup-btn">Поделиться новостью</a>
+            </div>
+        </div>
+    </div>
 
 	<header class="header">
 		<div class="header-left">
@@ -120,6 +173,9 @@
 				+7 347 268 08 28
 			</a>
 			<button class="call-btn btn">Заказать звонок</button>
+			<a href="tel:+73472680828" class="mobile__phone">
+				<img src="img/mobile__phone.svg" alt="">
+			</a>
 		</div>
 	</header>
 
@@ -156,21 +212,90 @@
 		<div class="main-slider">
 			<div class="slider__img">
 				<div class="img__list">
-					<img src="img/slider-img.jpg" alt="" class="main__slider-img">
+					<div class="slider__item">
+						<img src="img/slider-img.jpg" alt="" class="main__slider-img">
+						<div class="slider__lines">
+							<img src="img/gold-lines-slider.svg" alt="">
+						</div>
+						<div class="slider__title">
+							<div class="subtitle title">Территория</div>
+							<div class="gentitle title">двухуровневый<br>паркинг</div>
+						</div>
+						<div class="slider__description">
+							Выход в закрытый и отапливаемый паркинг осуществляется напрямую из дома. Внутри спроектированы широкие проезды и разработана удобная система навигации. Удобные места для автомобиля любых габаритов.
+						</div>
+					</div>
+					<div class="slider__item">
+						<img src="img/slider-img (1).jpg" alt="" class="main__slider-img">
+						<div class="slider__lines">
+							<img src="img/gold-lines-slider.svg" alt="">
+						</div>
+						<div class="slider__title">
+							<div class="subtitle title">Территория</div>
+							<div class="gentitle title">Фасад</div>
+						</div>
+						<div class="slider__description">
+							Уникальный дизайн и цветовое решение фасада здания дополняют городской ансамбль, при этом заметно выделяя сам дом. В работе используются материалы премиального качества от международного бренда Kerama Marazzi.
+						</div>
+					</div>
+					<div class="slider__item">
+						<img src="img/slider-img (2).jpg" alt="" class="main__slider-img">
+						<div class="slider__lines">
+							<img src="img/gold-lines-slider.svg" alt="">
+						</div>
+						<div class="slider__title">
+							<div class="subtitle title">Территория</div>
+							<div class="gentitle title">Расположение</div>
+						</div>
+						<div class="slider__description">
+							Клубный дом расположен в историческом центре города. В ближайшей доступности кинотеатры, множество магазинов и новые интересные места для променада в центре старого города.
+						</div>
+					</div>
+					<div class="slider__item">
+						<img src="img/slider-img (3).jpg" alt="" class="main__slider-img">
+						<div class="slider__lines">
+							<img src="img/gold-lines-slider.svg" alt="">
+						</div>
+						<div class="slider__title">
+							<div class="subtitle title">Территория</div>
+							<div class="gentitle title">Закрытая территория</div>
+						</div>
+						<div class="slider__description">
+							Безопасность и сохранность имущества для Вас и Ваших близких гарантирует закрытая территория и система видеонаблюдения. Безопасность резидентов клуба – один из главных приоритетов.
+
+						</div>
+					</div>
+					<div class="slider__item">
+						<img src="img/slider-img (4).jpg" alt="" class="main__slider-img">
+						<div class="slider__lines">
+							<img src="img/gold-lines-slider.svg" alt="">
+						</div>
+						<div class="slider__title">
+							<div class="subtitle title">Территория</div>
+							<div class="gentitle title">Детская площадка</div>
+						</div>
+						<div class="slider__description">
+							Детская площадка во внутреннем дворе со спортивными снарядами и развивающими играми, где Ваш ребенок будет в безопасности. Современное оборудование и уникальные материалы с заботой о подрастающем поколении.
+						</div>
+					</div>
+					<div class="slider__item">
+						<img src="img/slider-img (5).jpg" alt="" class="main__slider-img">
+						<div class="slider__lines">
+							<img src="img/gold-lines-slider.svg" alt="">
+						</div>
+						<div class="slider__title">
+							<div class="subtitle title">Территория</div>
+							<div class="gentitle title">Квартиры</div>
+						</div>
+						<div class="slider__description">
+							Эксклюзивные варианты квартир от 42,5 до 301 м² с высокими потолками 2,8 м² и изысканными планировками. Ваш уникальный вид на город со своей собственной террасы, из первого ряда.
+						</div>
+					</div>
 				</div>
 				<div class="prev-arrow"></div>
 				<div class="next-arrow"></div>
 			</div>
-			<div class="slider__title">
-				<div class="subtitle title">Территория</div>
-				<div class="gentitle title">двухуровневый<br>паркинг</div>
-			</div>
-			<div class="slider__lines">
-				<img src="img/gold-lines-slider.svg" alt="">
-			</div>
-			<div class="slider__description">
-				Выход в закрытый и отапливаемый <br>паркинг осуществляется напрямую из <br>дома. Внутри спроектированы широкие <br>проезды и разработана удобная<br> система навигации. Удобные места для <br>автомобиля любых габаритов.
-			</div>
+			
 			
 		</div>
 
@@ -228,6 +353,33 @@
 						<div class="info__item">Уралсиб</div>
 					</div>
 				</div>
+				<div class="partners__item">
+					<div class="partners__logo">
+						<img src="img/psb.svg" alt="">
+					</div>
+					<div class="partner__info">
+						<div class="info__item">2023</div>
+						<div class="info__item">ПСБ</div>
+					</div>
+				</div>
+				<div class="partners__item">
+					<div class="partners__logo">
+						<img src="img/otk.svg" alt="">
+					</div>
+					<div class="partner__info">
+						<div class="info__item">2023</div>
+						<div class="info__item">Открытие</div>
+					</div>
+				</div>
+				<div class="partners__item">
+					<div class="partners__logo">
+						<img src="img/metal.svg" alt="">
+					</div>
+					<div class="partner__info">
+						<div class="info__item">2023</div>
+						<div class="info__item">Металлинвестбанк</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -237,15 +389,15 @@
 			<div class="layout__list">
 				<div class="layout__item">
 					<img src="img/layout.jpg" alt="">
-					<a href="#" class="more__layout">Выбрать</a>
+					<a href="/category.html" class="more__layout">Выбрать</a>
 				</div>
 				<div class="layout__item active">
 					<img src="img/layout-1.jpg" alt="">
-					<a href="#" class="more__layout">Выбрать</a>
+					<a href="/category.html" class="more__layout">Выбрать</a>
 				</div>
 				<div class="layout__item">
 					<img src="img/layout-2.jpg" alt="">
-					<a href="#" class="more__layout">Выбрать</a>
+					<a href="/category.html" class="more__layout">Выбрать</a>
 				</div>
 			</div>
 		</div>
@@ -292,7 +444,7 @@
 					<div class="gallery__text-value">Галерея</div>
 				</div>
 				<div class="gallery__btn">
-					<a href="#" class="gallery__btn-value btn">Посмотреть</a>
+					<a href="/gallery.html" class="gallery__btn-value btn">Посмотреть</a>
 				</div>
 			</div>
 			<!-- <div class="gallery-svg-bg">
@@ -344,19 +496,19 @@
 			</div>
 			<div class="steps__slider-main">
 				<div class="arrow-prev"></div>
-				<div class="steps__overlay swiper-container">
-					<div class="steps__wrap swiper-wrapper">
-						<div class="steps__slider-item swiper-slide">
+				<div class="steps__overlay">
+					<div class="steps__wrap">
+						<div class="steps__slider-item">
 							<div class="s__slider-img"><img src="img/steps-item.jpg" alt=""></div>
 							<div class="s__slider-text">Ноябрь 2022</div>
 						</div>
-						<div class="steps__slider-item swiper-slide">
-							<div class="s__slider-img"><img src="img/steps-item.jpg" alt=""></div>
-							<div class="s__slider-text">Ноябрь 2022</div>
+						<div class="steps__slider-item">
+							<div class="s__slider-img"><img src="img/post-header-bg.jpg" alt=""></div>
+							<div class="s__slider-text">Декабрь 2022</div>
 						</div>
-						<div class="steps__slider-item swiper-slide">
-							<div class="s__slider-img"><img src="img/steps-item.jpg" alt=""></div>
-							<div class="s__slider-text">Ноябрь 2022</div>
+						<div class="steps__slider-item">
+							<div class="s__slider-img"><img src="img/floor-plan-2.jpg" alt=""></div>
+							<div class="s__slider-text">Январь 2023</div>
 						</div>
 					</div>
 				</div>
@@ -373,39 +525,39 @@
 			<div class="news__nav-wrapper">
 				<div class="news__nav">
 					<div class="news__arrow">
-						<a href="#" class="arrow-prev"></a>
-						<a href="#" class="arrow-next"></a>
+						<div class="arrow-prev"></div>
+						<div class="arrow-next"></div>
 					</div>
 					<a href="news-and-seller.html" class="news__all-btn btn">Все новости</a>
 				</div>
 			</div>
-			<div class="news__container swiper-container">
-				<div class="news__items swiper-wrapper">
-					<a href="#" class="n__item-link swiper-slide">
+			<div class="news__container">
+				<div class="news__items">
+					<a href="#" class="n__item-link">
 						<div class="new__item">
 							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
 							<div class="n__item-date">28.11.2022</div>
 						</div>
 					</a>
-					<a href="#" class="n__item-link swiper-slide">
+					<a href="#" class="n__item-link">
 						<div class="new__item">
 							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
 							<div class="n__item-date">28.11.2022</div>
 						</div>
 					</a>
-					<a href="#" class="n__item-link swiper-slide">
+					<a href="#" class="n__item-link">
 						<div class="new__item">
 							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
 							<div class="n__item-date">28.11.2022</div>
 						</div>
 					</a>
-					<a href="#" class="n__item-link swiper-slide">
+					<a href="#" class="n__item-link">
 						<div class="new__item">
 							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
 							<div class="n__item-date">28.11.2022</div>
 						</div>
 					</a>
-					<a href="#" class="n__item-link swiper-slide">
+					<a href="#" class="n__item-link">
 						<div class="new__item">
 							<div class="n__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
 							<div class="n__item-date">28.11.2022</div>
@@ -425,7 +577,7 @@
 				<input type="tel" name="phone" id="phone" placeholder="Телефон" class="call__input">
 				<div class="politics">
 					<input type="checkbox" id="politic" name="politic" value="yes" class="custom-checkbox">
-					<label for="politic">Я согласен на обработку персональных<br>данных
+					<label for="politic">Я согласен на обработку персональных данных
 					</label>
 				</div>
 				<input type="submit" value="отправить" class="submit__btn btn">
@@ -462,7 +614,8 @@
 			</div>
 		</div>
 		<div class="footer__logo">
-			<img src="img/footer__logo.png" alt="">
+			<img src="img/footer__logo.png" alt="" class="footer__img">
+			<img src="img/mobile__footer.svg" alt="" class="mobile__footer__img">
 		</div>
 	</footer>
 	
@@ -476,6 +629,7 @@
 	<![endif]-->
 
 	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 	<script src="js/preloader.js"></script>

@@ -38,6 +38,53 @@
 
 	<!-- Здесь пишем код -->
 
+	<div class="preloader">
+		<div class="preloader__left"></div>
+		<div class="preloader__right"></div>
+		<div class="preloader__wrapper">
+			<div class="preloader-imgs_wrapper">
+				<div class="preloader-imgs">
+					<div class="preloader-item first">
+						<img src="img/preloader_first.svg" alt="preloader" class="preloader_first">
+					</div>
+					<div class="preloader-item second">
+						<img src="img/preloader_second.svg" alt="preloader" class="preloader_second">
+					</div>
+					<div class="preloader-item thrid">
+						<img src="img/preloader_final.svg" alt="preloader" class="preloader_final">
+					</div>	
+				</div>
+			</div>
+			<div class="preloader-text">
+				<img src="img/preloader_text.svg" alt="preloader" class="preloader_text"> 
+			</div>
+		</div>
+	</div>
+
+	<div class="call__overlay">
+		<div class="call__mask"></div>
+		<div class="call__popup">
+			<div class="call__close">
+				<img src="img/call__close.svg" alt="">
+			</div>
+			<div class="call__img">
+				<img src="img/call__img.jpg" alt="">
+			</div>
+			<div class="call__popup__form">
+				<form action="#" class="call__form">
+					<input type="text" name="name" id="name" placeholder="Имя" class="call__input">
+					<input type="tel" name="phone" id="phone" placeholder="Телефон" class="call__input">
+					<div class="politics">
+						<input type="checkbox" id="politic" name="politic" value="yes" class="custom-checkbox">
+						<label for="politic">Я согласен на обработку персональных данных
+						</label>
+					</div>
+					<input type="submit" value="отправить" class="submit__btn btn">
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<div class="menu__container">
 		<div class="menu__wrapper">
             <div class="menu-header">
@@ -55,10 +102,13 @@
                 </div>
                 <a href="/" class="logo"></a>
                 <div class="header-right">
-                    <a href="tel:+79999999999" class="phone-btn">
+                    <a href="#" class="phone-btn">
                         +7 347 268 08 28
                     </a>
                     <button class="call-btn btn">Заказать звонок</button>
+					<a href="tel:+73472680828" class="mobile__phone__menu">
+						<img src="img/mobile__phone.svg" alt="">
+					</a>
                 </div>
             </div>
 			<div class="menu__list">
@@ -67,14 +117,17 @@
 				<a href="infrastructure.html" class="menu-link title">инфраструктура</a>
 				<a href="gallery.html" class="menu-link title">галерея</a>
 				<a href="contacts.html" class="menu-link title">контакты</a>
+				<a href="#steps" class="menu-link title">ход строительства</a>
+                <a href="news-and-seller.html" class="menu-link title">новости</a>
+                <a href="docs.html" class="menu-link title">документы</a>
 			</div>
             <div class="menu-footer">
                 <div class="copyright">2022 © ВЫБОР ПЕРВЫХ</div>
-                <div class="footer__menu">
+                <!-- <div class="footer__menu">
                     <a href="#steps" class="footer__menu-link">ход строительства</a>
                     <a href="news-and-seller.html" class="footer__menu-link">новости</a>
                     <a href="docs.html" class="footer__menu-link">документы</a>
-                </div>
+                </div> -->
             </div>
 		</div>
 	</div>
@@ -95,10 +148,13 @@
 		</div>
 		<a href="/" class="logo"></a>
 		<div class="header-right">
-			<a href="#" class="phone-btn">
+			<a href="tel:+79999999999" class="phone-btn">
 				+7 347 268 08 28
 			</a>
 			<button class="call-btn btn">Заказать звонок</button>
+			<a href="tel:+73472680828" class="mobile__phone">
+				<img src="img/mobile__phone.svg" alt="">
+			</a>
 		</div>
 	</header>
 
@@ -206,7 +262,8 @@
 			</div>
 		</div>
 		<div class="footer__logo">
-			<img src="img/footer__logo.png" alt="">
+			<img src="img/footer__logo.png" alt="" class="footer__img">
+			<img src="img/mobile__footer.svg" alt="" class="mobile__footer__img">
 		</div>
 	</footer>
 	
