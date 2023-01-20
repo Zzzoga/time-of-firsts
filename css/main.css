@@ -3038,6 +3038,7 @@ img.galler__bg {
 
 .sg__container img {
 	width: 380px;
+	max-height: 235px;
 	margin: 100px 0;
 }
 
