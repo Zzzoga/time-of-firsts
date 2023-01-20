@@ -86,7 +86,6 @@ if (getCookie('loading') !== 'done') {
 document.addEventListener("DOMContentLoaded", () => {
 
 // PHONE MASK
-
 maskPhone('input#phone')
 
 // SHOW/HIDE MENU FUNCTION  
@@ -284,13 +283,47 @@ document.querySelectorAll('.n__item-link').forEach(element => {
   
 // SLICK SLIDER functions
 
-$('.partners__list').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: false,
-  autoplay: true,
-  autoplaySpeed: 1000,
-});
+if (document.documentElement.clientWidth > 1024) { 
+  $('.partners__list').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 1000,
+  });
+} else if (document.documentElement.clientWidth < 1024 && document.documentElement.clientWidth > 767) {
+  $('.partners__list').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 1000,
+  });
+} else if (document.documentElement.clientWidth < 767) {
+  $('.partners__list').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 1000,
+  });
+}
+
+if (document.documentElement.clientWidth > 1024) { 
+  $('.news__items').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: '.news .arrow-prev',
+    nextArrow: '.news .arrow-next'
+  });
+} else {
+  $('.news__items').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: '.news .arrow-prev',
+    nextArrow: '.news .arrow-next'
+  });
+}
 
 $('.img__list').slick({
   slidesToShow: 1,
@@ -300,18 +333,20 @@ $('.img__list').slick({
   nextArrow: '.next-arrow'
 });
 
+$('.floor__mobile').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  prevArrow: '.floor-plan .prev-arrow',
+  nextArrow: '.floor-plan .next-arrow'
+});
+
+
 $('.steps__wrap').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: '.steps__main .arrow-prev',
   nextArrow: '.steps__main .arrow-next'
-});
-
-$('.news__items').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  prevArrow: '.news .arrow-prev',
-  nextArrow: '.news .arrow-next'
 });
 
 $('.about-slider__img').slick({
@@ -804,37 +839,38 @@ tlGen.fromTo('.map_contur', {opacity: 0, top: '300px', ease: "none", ease: "none
 // }, top: '-45px', duration: 3})
   
 // Блок с видео. Переход из эллипса в прямогульный формат блока
-$(".sticky__wrapper").each(function (index) {
-  let triggerElement = $(this);
-  let targetElement = $(".sticky__content");
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: triggerElement,
-      // trigger element - viewport
-      start: "top top",
-      end: "bottom bottom",
-      scrub: 1
-    }
-  });
-  tl.fromTo(
-    targetElement,
-    {
-      width: "74vw",
-      height: "46vw",
-      borderRadius: "46vw",
-      ease: "none", ease: "none", duration: .5
-    },
-    {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: "0vw",
-      ease: "none", ease: "none", duration: .5
-    }
-  )
-
-})
-
+if (document.documentElement.clientWidth > 1024) { 
+  $(".sticky__wrapper").each(function (index) {
+    let triggerElement = $(this);
+    let targetElement = $(".sticky__content");
+  
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerElement,
+        // trigger element - viewport
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1
+      }
+    });
+    tl.fromTo(
+      targetElement,
+      {
+        width: "74vw",
+        height: "46vw",
+        borderRadius: "46vw",
+        ease: "none", ease: "none", duration: .5
+      },
+      {
+        width: "100vw",
+        height: "100vh",
+        borderRadius: "0vw",
+        ease: "none", ease: "none", duration: .5
+      }
+    )
+  
+  })
+}
 
 setCookie('loading', 'done')
 

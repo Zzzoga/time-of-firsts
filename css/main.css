@@ -555,6 +555,7 @@ main {
 
 .slider__img {
     position: relative;
+	max-width: 100%;
 }
 
 .img__list {
@@ -1197,10 +1198,8 @@ main {
 }
 
 .steps__wrap {
-	display: flex;
-	justify-content: space-between;
+	display: block;
 	width: 100%;
-    align-items: center;
 	margin-top: 44px;
 	position: relative;
 	min-width: 0;
@@ -1292,9 +1291,7 @@ main {
 }
 
 .news__items {
-	display: flex;
-	justify-content: space-between;
-	position: relative;
+	display: block;
 }
 
 .n__item-link {
@@ -1380,6 +1377,7 @@ main {
 	top: 0;
 	left: 0;
 	scale: 1;
+	height: 100%;
 }
 
 .call__title-wrapper {
@@ -1634,6 +1632,7 @@ main {
 
 .footer__img {
 	display: block;
+	width: 100%;
 }
 
 /* ----------- */
@@ -1765,6 +1764,14 @@ main {
 	margin-bottom: 290px;
 	height: 945px;
 	overflow: hidden;
+}
+
+.floor__mobile {
+	display: none;
+}
+
+.floor-plan .a-s__arrow-btn {
+	display: none;
 }
 
 .foor-plan__imgs {
@@ -1951,35 +1958,46 @@ main {
 	padding: 28px 160px;
 }
 
+
+@keyframes best__line {   
+	from {     
+	  transform: translateX(0%)  
+	}   
+	to {
+		transform: translateX(-100%) 
+	}
+}
+
 .line-text {
 	width: 100%;
 	overflow: hidden;
+	padding: 300px 0;
 }
 
-.line-text ul {
+.line-text__wrapper {
+	width: 18000px;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	margin: 300px 0;
-	width: 275%;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 50%;
+	animation: best__line 150s none infinite;
 }
 
-.line-text ul li {
-	font-family: 'Anticva', sans-serif;
-    list-style: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 96px;
-    line-height: 115px;
-    background: url(../img/romb.svg) no-repeat left center;
-    padding-left: 80px;
-    max-height: 90px;
+.best__item {
+	font-weight: 400;
+	font-size: 96px;
+	line-height: 115px;
 }
 
-.line-text ul li:nth-child(2n) {
+.best__item.icon img {
+	position: relative;
+	top: -15px;
+}
+
+.best__item.color__text {
 	color: #DBBC9A;
 }
+
 
 /* Premain Banner */
 
@@ -3377,7 +3395,7 @@ img.galler__bg {
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
-	z-index: 999999;
+	z-index: 9999999;
 	display: none;
 	justify-content: center;
 	align-items: center;
